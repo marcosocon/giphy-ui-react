@@ -1,3 +1,4 @@
+import serviceFetch from '../services/fetch';
 import {
   API_KEY,
   API_URL 
@@ -14,14 +15,7 @@ export function fetchTrendingGifs() {
   const max = 10;
   return (dispatch) => {
     const url = `${API_URL}trending?api_key=${API_KEY}&limit=${max}`;
-    fetch(url)
-      .then((response) => {
-        if (!response.ok) {
-          throw Error(response.statusText);
-        }
-        return response;
-      })
-      .then((response) => response.json())
+    serviceFetch.get(url)
       .then((items) => dispatch(setTrendingGifs(items.data)))
   };
 };
