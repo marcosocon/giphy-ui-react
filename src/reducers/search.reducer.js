@@ -18,6 +18,8 @@ export default (state = initialState, action) => {
       return { ...state, searchResultGifs: action.payload };
     case 'SET_SEARCH_CURRENT':
       return { ...state, currentSearch: action.payload };
+    case 'SET_SEARCH_STATUS':
+      return { ...state, status: action.payload };
     default:
         return state
   }

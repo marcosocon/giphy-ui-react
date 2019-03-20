@@ -23,16 +23,18 @@ class HomeContainer extends Component {
         this.setState(change);
     }
 
-    handleSearchChange = (evt, data) => {
-        this.props.fetchOptionsGifts(data.value);
+    hanldeResultSelect = (evt, { result }) => {
+        this.props.fetchSearchedGifs(result.title);
     }
-
-    hanldeResultSelect = (evt, data) => {
-        this.props.fetchSearchedGifs(data.value);
+    
+    handleSearchChange = (evt, { value }) => {
+        console.log({ value });
+        this.props.fetchOptionsGifts(value);
     }
 
     render() {
         const { trending, search, results } = this.props;
+        const gifs = search.status === 0 ? trending : results;
         return (
             <Container>
                 <Grid>
@@ -53,7 +55,7 @@ class HomeContainer extends Component {
                 </Grid>
                 <Grid columns={5}>
                     <Grid.Row>
-                        {trending.map(item => (
+                        {gifs.map(item => (
                             <Grid.Column key={uniqueId('trending-')}>
                                 <Image src={item.images.fixed_height.url} />
                             </Grid.Column>

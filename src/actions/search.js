@@ -37,21 +37,19 @@ export function fetchSearchedGifs(qs) {
   const max = 10;
   return dispatch => {
     const url = `${API_URL}search?api_key=${API_KEY}&q${qs}&limit=${max}`;
-    dispatch(loading(true));
+    dispatch(setCurrentSearch(qs));
     return serviceFetch.get(url)
       .then((items) => {
-        dispatch(loading(false));
-        dispatch(setFindedGifs(items.data))
+        dispatch(setFindedGifs(items.data));
+        dispatch(setStatus(2));
       });
   }
 }
 
 export function fetchOptionsGifts(qs) {
   const max = 10;
-  console.log({ qs });
   return dispatch => {
     const url = `${API_URL}search?api_key=${API_KEY}&q=${qs}&limit=${max}`;
-    console.log({ url });
     dispatch(setLoadingStatus(true));
     dispatch(setCurrentSearch(qs));
     dispatch(setStatus(1));
