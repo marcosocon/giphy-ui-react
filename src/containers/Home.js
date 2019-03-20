@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Grid, Header, Search, Image } from 'semantic-ui-react';
+import { Container, Grid, Header, Search, Image, Button } from 'semantic-ui-react';
 import { uniqueId } from 'lodash';
 import { fetchOptionsGifts, fetchSearchedGifs } from '../actions/search';
-import { fetchTrendingGifs } from './../actions/trending';
+import { addFavorite, removeFavorite } from '../actions/favorites';
+import { fetchTrendingGifs } from '../actions/trending';
+import './Home.css';
 
 class HomeContainer extends Component {
     constructor(props) {
@@ -33,16 +35,16 @@ class HomeContainer extends Component {
     }
 
     render() {
-        const { trending, search, results } = this.props;
+        const { trending, search, results, addFavorite } = this.props;
         const gifs = search.status === 0 ? trending : results;
         return (
             <Container>
                 <Grid>
-                    <Grid.Row>
-                        <Grid.Column width={3}>
-                            <Header as="h1">GIPTHY API TEST</Header>
+                    <Grid.Row className="headerWrapper">
+                        <Grid.Column width={3} verticalAlign="middle">
+                            <Header as="h1" className="h1">GIPTHY API TEST</Header>
                         </Grid.Column>
-                        <Grid.Column width={8}>
+                        <Grid.Column width={13}>
                             <Search 
                                 loading={search.loading}
                                 onResultSelect={this.hanldeResultSelect}
@@ -53,14 +55,25 @@ class HomeContainer extends Component {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-                <Grid columns={5}>
-                    <Grid.Row>
-                        {gifs.map(item => (
-                            <Grid.Column key={uniqueId('trending-')}>
-                                <Image src={item.images.fixed_height.url} />
-                            </Grid.Column>
-                        ))}
-                    </Grid.Row>
+                <Grid columns={4}>
+                    {gifs.map((item, key) => (
+                        <Grid.Column key={uniqueId('trending-')}>
+                            <Image
+                                src={item.images.fixed_height.url}
+                                as="a"
+                                href={item.images.original.url}
+                                target="_blank"
+                                bordered
+                            />
+                            <Button
+                                circular
+                                icon="heart"
+                                className="like" 
+                                color="red"
+                                onClick={() => addFavorite(item)}
+                            />
+                        </Grid.Column>
+                    ))}
                 </Grid>
             </Container>
         );
@@ -77,6 +90,8 @@ const mapDispatchToProps = (dispatch) => ({
     fetchTrendingGifs: () => dispatch(fetchTrendingGifs()),
     fetchOptionsGifts: (payload) => dispatch(fetchOptionsGifts(payload)),
     fetchSearchedGifs: (payload) => dispatch(fetchSearchedGifs(payload)),
+    addFavorite: (payload) => dispatch(addFavorite(payload)),
+    removeFavorite: (payload) => dispatch(removeFavorite(payload)),
 });
 
 export default connect(

@@ -1,5 +1,4 @@
 import serviceFetch from '../services/fetch';
-import { loading } from './loader';
 import {
   API_KEY,
   API_URL 
@@ -34,7 +33,7 @@ export function setFindedGifs(payload) {
 }
 
 export function fetchSearchedGifs(qs) {
-  const max = 10;
+  const max = 20;
   return dispatch => {
     const url = `${API_URL}search?api_key=${API_KEY}&q${qs}&limit=${max}`;
     dispatch(setCurrentSearch(qs));
@@ -47,7 +46,7 @@ export function fetchSearchedGifs(qs) {
 }
 
 export function fetchOptionsGifts(qs) {
-  const max = 10;
+  const max = 20;
   return dispatch => {
     const url = `${API_URL}search?api_key=${API_KEY}&q=${qs}&limit=${max}`;
     dispatch(setLoadingStatus(true));
