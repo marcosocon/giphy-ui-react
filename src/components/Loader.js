@@ -1,5 +1,5 @@
 import React from 'react';
-import { Segment, Dimmer, Loader as SemanticLoader } from 'semantic-ui-react';
+import { Loader as SemanticLoader } from 'semantic-ui-react';
 
 function Loader({ classes }) {
   return (

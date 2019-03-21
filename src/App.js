@@ -8,7 +8,6 @@ function AppRouter() {
   return (
     <Router>
         <Route path="/" exact component={HomeContainer} />
-        {/* <Route path="/show/:id" component={Detail} /> */}
     </Router>
   );
 }

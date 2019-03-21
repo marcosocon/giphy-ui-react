@@ -17,11 +17,10 @@ export function fetchTrendingGifs() {
   return (dispatch) => {
     dispatch(loading(true));
     const url = `${API_URL}trending?api_key=${API_KEY}&limit=${max}`;
-    serviceFetch.get(url)
-    .then((items) => {
+    return serviceFetch.get(url)
+      .then((items) => {
         dispatch(loading(false));
         dispatch(setTrendingGifs(items.data));
-
       });
   };
 };

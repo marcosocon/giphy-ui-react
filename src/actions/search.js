@@ -11,13 +11,6 @@ export function setStatus(payload) {
   }
 }
 
-export function setLoadingStatus(payload) {
-  return {
-    type: 'SET_SEARCH_LOADING_STATUS',
-    payload,
-  }
-}
-
 export function setCurrentSearch(payload) {
   return {
     type: 'SET_SEARCH_CURRENT',
