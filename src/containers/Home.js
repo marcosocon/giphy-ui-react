@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Grid, Header, Search, Image, Button } from 'semantic-ui-react';
-import { uniqueId } from 'lodash';
-import { fetchOptionsGifts, fetchSearchedGifs } from '../actions/search';
+import { Container, Grid, Header, Input } from 'semantic-ui-react';
+
+import { fetchGifsByKeyword } from '../actions/search';
 import { addFavorite, removeFavorite } from '../actions/favorites';
 import { fetchTrendingGifs } from '../actions/trending';
+
 import './Home.css';
+import GifList from '../components/GifList';
 
 class HomeContainer extends Component {
     constructor(props) {
@@ -19,68 +21,59 @@ class HomeContainer extends Component {
         this.props.fetchTrendingGifs();
     }
 
-    handleChange(e) {
-        let change = {};
-        change[e.target.name] = e.target.value;
-        this.setState(change);
-    }
-
-    hanldeResultSelect = (evt, { result }) => {
-        this.props.fetchSearchedGifs(result.title);
-    }
-    
-    handleSearchChange = (evt, { value }) => {
-        console.log({ value });
-        this.props.fetchOptionsGifts(value);
+    handleChange = (e) => {
+        this.setState({[e.target.name]: e.target.value});
+        this.props.fetchGifsByKeyword(this.state.searchStr);
     }
 
     render() {
-        const { trending, search, results, addFavorite } = this.props;
+        const { trending, search, results, addFavorite, removeFavorite, favorites } = this.props;
         const gifs = search.status === 0 ? trending : results;
         return (
             <Container>
+                <GifList
+                    title='Favorites'
+                    favorites={favorites}
+                    gifsToShow={favorites}
+                    onAddFavorite={addFavorite}
+                    onRemoveFavorite={removeFavorite} />
                 <Grid>
                     <Grid.Row className="headerWrapper">
-                        <Grid.Column width={3} verticalAlign="middle">
-                            <Header as="h1" className="h1">GIPTHY API TEST</Header>
+                        <Grid.Column
+                            width={3}
+                            verticalAlign="middle">
+                            <Header
+                                as="h1"
+                                className="h1">
+                                GIPHY UI
+                            </Header>
                         </Grid.Column>
                         <Grid.Column width={13}>
-                            <Search 
+                            <Input
+                                icon='search'
+                                placeholder='Write a keyword to search a GIF'
+                                name='searchStr'
+                                onChange = {this.handleChange}
                                 loading={search.loading}
-                                onResultSelect={this.hanldeResultSelect}
-                                onSearchChange={this.handleSearchChange}
                                 results={results}
-                                value={search.currentSearch}
+                                value={this.state.searchStr}
                             />
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-                <Grid columns={4}>
-                    {gifs.map((item, key) => (
-                        <Grid.Column key={uniqueId('trending-')}>
-                            <Image
-                                src={item.images.fixed_height.url}
-                                as="a"
-                                href={item.images.original.url}
-                                target="_blank"
-                                bordered
-                            />
-                            <Button
-                                circular
-                                icon="heart"
-                                className="like" 
-                                color="red"
-                                onClick={() => addFavorite(item)}
-                            />
-                        </Grid.Column>
-                    ))}
-                </Grid>
+                <GifList
+                    title='Trending'
+                    favorites={favorites}
+                    gifsToShow={gifs}
+                    onAddFavorite={addFavorite}
+                    onRemoveFavorite={removeFavorite} />
             </Container>
         );
     }
 };
 
 const mapStateToProps = (state) => ({
+    favorites: state.gifsReducer.favoriteGifs,
     trending: state.gifsReducer.trendingGifs,
     results: state.gifsReducer.searchResultGifs,
     search: state.searchReducer,
@@ -88,10 +81,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     fetchTrendingGifs: () => dispatch(fetchTrendingGifs()),
-    fetchOptionsGifts: (payload) => dispatch(fetchOptionsGifts(payload)),
-    fetchSearchedGifs: (payload) => dispatch(fetchSearchedGifs(payload)),
-    addFavorite: (payload) => dispatch(addFavorite(payload)),
+    fetchGifsByKeyword: (payload) => dispatch(fetchGifsByKeyword(payload)),
     removeFavorite: (payload) => dispatch(removeFavorite(payload)),
+    addFavorite: (payload) => dispatch(addFavorite(payload)),
 });
 
 export default connect(

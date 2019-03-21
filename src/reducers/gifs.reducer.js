@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
         case 'ADD_FAVORITE':
             return { ...state, favoriteGifs: [...state.favoriteGifs, action.payload] };
         case 'REMOVE_FAVORITE':
-          return { ...state, favoriteGifs: dropWhile(state.favoriteGifs, action.payload) };
+            return { ...state, favoriteGifs: state.favoriteGifs.filter(item => item !== action.payload) };
         default:
             return state
     }
