@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import Loader from './Loader';
 
 function setup(props) {
-  return shallow(<Loader {...props} />);
+  return mount(<Loader {...props} />);
 }
 
 describe('<Loader />', () => {
