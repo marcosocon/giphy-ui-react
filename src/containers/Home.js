@@ -74,7 +74,7 @@ class HomeContainer extends Component {
                         favorites={favorites}
                         gifsToShow={gifs}
                         onAddFavorite={addFavorite}
-                        onRemoveFavorite={removeFavorite}    
+                        onRemoveFavorite={removeFavorite}
                     />
                 )}
             </Container>

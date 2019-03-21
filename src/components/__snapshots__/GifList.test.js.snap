@@ -1,0 +1,584 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GifList /> render itself 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GifList
+    favorites={
+      Array [
+        Object {
+          "id": "MOCK1",
+          "images": Object {
+            "fixed_height": Object {
+              "url": "https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif",
+            },
+            "original": Object {
+              "url": "https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif",
+            },
+          },
+        },
+        Object {
+          "id": "MOCK2",
+          "images": Object {
+            "fixed_height": Object {
+              "url": "https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif",
+            },
+            "original": Object {
+              "url": "https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif",
+            },
+          },
+        },
+      ]
+    }
+    gifsToShow={
+      Array [
+        Object {
+          "id": "MOCK1",
+          "images": Object {
+            "fixed_height": Object {
+              "url": "https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif",
+            },
+            "original": Object {
+              "url": "https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif",
+            },
+          },
+        },
+        Object {
+          "id": "MOCK2",
+          "images": Object {
+            "fixed_height": Object {
+              "url": "https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif",
+            },
+            "original": Object {
+              "url": "https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif",
+            },
+          },
+        },
+      ]
+    }
+    title="test"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <Header
+          as="h1"
+          className="h1"
+        >
+          test
+        </Header>,
+        <Grid
+          columns={4}
+        >
+          <GridColumn>
+            <Image
+              as="a"
+              bordered={true}
+              href="https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif"
+              src="https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif"
+              target="_blank"
+              ui={true}
+            />
+            <Button
+              as="button"
+              circular={true}
+              className="like"
+              color="black"
+              icon="heart"
+              onClick={[Function]}
+            />
+          </GridColumn>
+          <GridColumn>
+            <Image
+              as="a"
+              bordered={true}
+              href="https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif"
+              src="https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif"
+              target="_blank"
+              ui={true}
+            />
+            <Button
+              as="button"
+              circular={true}
+              className="like"
+              color="black"
+              icon="heart"
+              onClick={[Function]}
+            />
+          </GridColumn>
+        </Grid>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "as": "h1",
+          "children": "test",
+          "className": "h1",
+        },
+        "ref": null,
+        "rendered": "test",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <GridColumn>
+              <Image
+                as="a"
+                bordered={true}
+                href="https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif"
+                src="https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif"
+                target="_blank"
+                ui={true}
+              />
+              <Button
+                as="button"
+                circular={true}
+                className="like"
+                color="black"
+                icon="heart"
+                onClick={[Function]}
+              />
+            </GridColumn>,
+            <GridColumn>
+              <Image
+                as="a"
+                bordered={true}
+                href="https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif"
+                src="https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif"
+                target="_blank"
+                ui={true}
+              />
+              <Button
+                as="button"
+                circular={true}
+                className="like"
+                color="black"
+                icon="heart"
+                onClick={[Function]}
+              />
+            </GridColumn>,
+          ],
+          "columns": 4,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "trending-1",
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <Image
+                  as="a"
+                  bordered={true}
+                  href="https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif"
+                  src="https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif"
+                  target="_blank"
+                  ui={true}
+                />,
+                <Button
+                  as="button"
+                  circular={true}
+                  className="like"
+                  color="black"
+                  icon="heart"
+                  onClick={[Function]}
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "as": "a",
+                  "bordered": true,
+                  "href": "https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif",
+                  "src": "https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif",
+                  "target": "_blank",
+                  "ui": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "as": "button",
+                  "circular": true,
+                  "className": "like",
+                  "color": "black",
+                  "icon": "heart",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "trending-2",
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <Image
+                  as="a"
+                  bordered={true}
+                  href="https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif"
+                  src="https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif"
+                  target="_blank"
+                  ui={true}
+                />,
+                <Button
+                  as="button"
+                  circular={true}
+                  className="like"
+                  color="black"
+                  icon="heart"
+                  onClick={[Function]}
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "as": "a",
+                  "bordered": true,
+                  "href": "https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif",
+                  "src": "https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif",
+                  "target": "_blank",
+                  "ui": true,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "as": "button",
+                  "circular": true,
+                  "className": "like",
+                  "color": "black",
+                  "icon": "heart",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <Header
+            as="h1"
+            className="h1"
+          >
+            test
+          </Header>,
+          <Grid
+            columns={4}
+          >
+            <GridColumn>
+              <Image
+                as="a"
+                bordered={true}
+                href="https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif"
+                src="https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif"
+                target="_blank"
+                ui={true}
+              />
+              <Button
+                as="button"
+                circular={true}
+                className="like"
+                color="black"
+                icon="heart"
+                onClick={[Function]}
+              />
+            </GridColumn>
+            <GridColumn>
+              <Image
+                as="a"
+                bordered={true}
+                href="https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif"
+                src="https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif"
+                target="_blank"
+                ui={true}
+              />
+              <Button
+                as="button"
+                circular={true}
+                className="like"
+                color="black"
+                icon="heart"
+                onClick={[Function]}
+              />
+            </GridColumn>
+          </Grid>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "as": "h1",
+            "children": "test",
+            "className": "h1",
+          },
+          "ref": null,
+          "rendered": "test",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <GridColumn>
+                <Image
+                  as="a"
+                  bordered={true}
+                  href="https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif"
+                  src="https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif"
+                  target="_blank"
+                  ui={true}
+                />
+                <Button
+                  as="button"
+                  circular={true}
+                  className="like"
+                  color="black"
+                  icon="heart"
+                  onClick={[Function]}
+                />
+              </GridColumn>,
+              <GridColumn>
+                <Image
+                  as="a"
+                  bordered={true}
+                  href="https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif"
+                  src="https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif"
+                  target="_blank"
+                  ui={true}
+                />
+                <Button
+                  as="button"
+                  circular={true}
+                  className="like"
+                  color="black"
+                  icon="heart"
+                  onClick={[Function]}
+                />
+              </GridColumn>,
+            ],
+            "columns": 4,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "trending-1",
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <Image
+                    as="a"
+                    bordered={true}
+                    href="https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif"
+                    src="https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif"
+                    target="_blank"
+                    ui={true}
+                  />,
+                  <Button
+                    as="button"
+                    circular={true}
+                    className="like"
+                    color="black"
+                    icon="heart"
+                    onClick={[Function]}
+                  />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "a",
+                    "bordered": true,
+                    "href": "https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif",
+                    "src": "https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif",
+                    "target": "_blank",
+                    "ui": true,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "as": "button",
+                    "circular": true,
+                    "className": "like",
+                    "color": "black",
+                    "icon": "heart",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "trending-2",
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <Image
+                    as="a"
+                    bordered={true}
+                    href="https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif"
+                    src="https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif"
+                    target="_blank"
+                    ui={true}
+                  />,
+                  <Button
+                    as="button"
+                    circular={true}
+                    className="like"
+                    color="black"
+                    icon="heart"
+                    onClick={[Function]}
+                  />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": "a",
+                    "bordered": true,
+                    "href": "https://media2.giphy.com/media/zSUanrp1uZHfq/giphy.gif",
+                    "src": "https://media2.giphy.com/media/zSUanrp1uZHfq/200.gif",
+                    "target": "_blank",
+                    "ui": true,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "as": "button",
+                    "circular": true,
+                    "className": "like",
+                    "color": "black",
+                    "icon": "heart",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
