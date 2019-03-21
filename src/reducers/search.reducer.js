@@ -4,7 +4,7 @@ const STATUS = {
   ACEPTED: 2,
 }
 
-const initialState = {
+export const initialState = {
   currentSearch: '',
   loading: false,
   status: STATUS.INITIAL,
@@ -12,10 +12,6 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_TRENDING_GIFS':
-        return { ...state, trendingGifs: action.payload };
-    case 'SET_FINDED_GIFS':
-      return { ...state, searchResultGifs: action.payload };
     case 'SET_SEARCH_CURRENT':
       return { ...state, currentSearch: action.payload };
     case 'SET_SEARCH_STATUS':
