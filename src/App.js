@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import HomeContainer from './containers/Home';
 import './App.css';
 
-function AppRouter() {
+export function AppRouter() {
   return (
     <Router>
         <Route path="/" exact component={HomeContainer} />

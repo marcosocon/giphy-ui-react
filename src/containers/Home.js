@@ -11,7 +11,7 @@ import './Home.css';
 import GifList from '../components/GifList';
 import Loader from '../components/Loader';
 
-class HomeContainer extends Component {
+export class HomeContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -82,14 +82,14 @@ class HomeContainer extends Component {
     }
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
     favorites: state.gifsReducer.favoriteGifs,
     trending: state.gifsReducer.trendingGifs,
     results: state.gifsReducer.searchResultGifs,
     search: state.searchReducer,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
     fetchTrendingGifs: () => dispatch(fetchTrendingGifs()),
     fetchGifsByKeyword: (payload) => dispatch(fetchGifsByKeyword(payload)),
     removeFavorite: (payload) => dispatch(removeFavorite(payload)),

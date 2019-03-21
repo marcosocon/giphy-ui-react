@@ -4,7 +4,7 @@ import Loader from './Loader';
 
 describe('<Loader />', () => {
   it('render itself', () => {
-    const component = shallow(<Loader/>);
+    const component = shallow(<Loader />);
     expect(component).toMatchSnapshot();
-  })
+  });
 });
