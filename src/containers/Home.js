@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Grid, Header, Input } from 'semantic-ui-react';
+import { debounce } from 'lodash';
 
 import { fetchGifsByKeyword } from '../actions/search';
 import { addFavorite, removeFavorite } from '../actions/favorites';
@@ -21,9 +22,11 @@ class HomeContainer extends Component {
         this.props.fetchTrendingGifs();
     }
 
+    debounceSearch = debounce(() => this.props.fetchGifsByKeyword(this.state.searchStr), 500);
+
     handleChange = (e) => {
-        this.setState({[e.target.name]: e.target.value});
-        this.props.fetchGifsByKeyword(this.state.searchStr);
+        this.setState({ [e.target.name]: e.target.value });
+        this.debounceSearch();
     }
 
     render() {

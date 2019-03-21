@@ -35,7 +35,7 @@ export function setFindedGifs(payload) {
 export function fetchGifsByKeyword(keyword) {
   const max = 20;
   return dispatch => {
-    const url = `${API_URL}search?api_key=${API_KEY}&q${keyword}&limit=${max}`;
+    const url = `${API_URL}search?api_key=${API_KEY}&q=${keyword}&limit=${max}`;
     dispatch(setCurrentSearch(keyword));
     return serviceFetch.get(url)
       .then((items) => {

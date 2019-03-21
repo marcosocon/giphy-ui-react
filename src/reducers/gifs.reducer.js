@@ -1,5 +1,3 @@
-import { dropWhile } from 'lodash';
-
 const initialState = {
     trendingGifs: [],
     favoriteGifs: [],
