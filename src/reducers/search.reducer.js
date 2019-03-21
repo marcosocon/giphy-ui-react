@@ -20,6 +20,8 @@ export default (state = initialState, action) => {
       return { ...state, currentSearch: action.payload };
     case 'SET_SEARCH_STATUS':
       return { ...state, status: action.payload };
+    case 'LOADING':
+      return { ...state, loading: action.payload };
     default:
         return state
   }

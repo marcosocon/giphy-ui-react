@@ -3,7 +3,7 @@ import { uniqueId, isEmpty, find } from 'lodash';
 
 import { Container, Grid, Image, Button, Header } from 'semantic-ui-react';
 
-const GifList = ({ title, favorites, gifsToShow, onAddFavorite, onRemoveFavorite }) => {
+function GifList({ title, favorites, gifsToShow, onAddFavorite, onRemoveFavorite }) {
     const showFavoriteHandler = (item) => {
         const isAlreadyAFavorite = !!find(favorites, (el) => el.id === item.id);
         return (

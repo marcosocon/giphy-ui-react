@@ -32,15 +32,26 @@ export function setFindedGifs(payload) {
   }
 }
 
+export function loading(payload) {
+  return {
+    type: 'LOADING',
+    payload
+  }
+}
+
 export function fetchGifsByKeyword(keyword) {
   const max = 20;
   return dispatch => {
     const url = `${API_URL}search?api_key=${API_KEY}&q=${keyword}&limit=${max}`;
     dispatch(setCurrentSearch(keyword));
+    dispatch(setStatus(1));
+    dispatch(loading(true));
+    
     return serviceFetch.get(url)
-      .then((items) => {
+    .then((items) => {
         dispatch(setFindedGifs(items.data));
         dispatch(setStatus(2));
+        dispatch(loading(false));
       });
   }
 }

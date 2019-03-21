@@ -1,4 +1,5 @@
 import serviceFetch from '../services/fetch';
+import { loading } from './search';
 import {
   API_KEY,
   API_URL 
@@ -14,8 +15,13 @@ export function setTrendingGifs(payload) {
 export function fetchTrendingGifs() {
   const max = 10;
   return (dispatch) => {
+    dispatch(loading(true));
     const url = `${API_URL}trending?api_key=${API_KEY}&limit=${max}`;
     serviceFetch.get(url)
-      .then((items) => dispatch(setTrendingGifs(items.data)))
+    .then((items) => {
+        dispatch(loading(false));
+        dispatch(setTrendingGifs(items.data));
+
+      });
   };
 };

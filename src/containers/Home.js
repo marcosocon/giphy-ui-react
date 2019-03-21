@@ -9,6 +9,7 @@ import { fetchTrendingGifs } from '../actions/trending';
 
 import './Home.css';
 import GifList from '../components/GifList';
+import Loader from '../components/Loader';
 
 class HomeContainer extends Component {
     constructor(props) {
@@ -64,12 +65,17 @@ class HomeContainer extends Component {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-                <GifList
-                    title='Trending'
-                    favorites={favorites}
-                    gifsToShow={gifs}
-                    onAddFavorite={addFavorite}
-                    onRemoveFavorite={removeFavorite} />
+                {search.loading ? (
+                    <Loader classes="searchLoader" />
+                ) : (
+                    <GifList
+                        title='Trending'
+                        favorites={favorites}
+                        gifsToShow={gifs}
+                        onAddFavorite={addFavorite}
+                        onRemoveFavorite={removeFavorite}    
+                    />
+                )}
             </Container>
         );
     }
