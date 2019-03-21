@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Loader as SemanticLoader } from 'semantic-ui-react';
 
 function Loader({ classes }) {
@@ -10,5 +11,13 @@ function Loader({ classes }) {
     </div>
   )
 }
+
+Loader.propTypes = {
+  classes: PropTypes.string,
+};
+
+Loader.defaultProps = {
+  classes: '',
+};
 
 export default Loader;
