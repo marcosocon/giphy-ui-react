@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Grid, Header, Input } from 'semantic-ui-react';
-import { debounce } from 'lodash';
+import { debounce, isEmpty } from 'lodash';
 
 import { fetchGifsByKeyword } from '../actions/search';
 import { addFavorite, removeFavorite } from '../actions/favorites';
@@ -32,7 +32,8 @@ class HomeContainer extends Component {
 
     render() {
         const { trending, search, results, addFavorite, removeFavorite, favorites } = this.props;
-        const gifs = search.status === 0 ? trending : results;
+        const gifs = search.status === 0 || isEmpty(this.state.searchStr) ? trending : results;
+        const title = search.status === 0 || isEmpty(this.state.searchStr) ? 'Trending' : 'Results'
         return (
             <Container>
                 <GifList
@@ -69,7 +70,7 @@ class HomeContainer extends Component {
                     <Loader classes="searchLoader" />
                 ) : (
                     <GifList
-                        title='Trending'
+                        title={title}
                         favorites={favorites}
                         gifsToShow={gifs}
                         onAddFavorite={addFavorite}

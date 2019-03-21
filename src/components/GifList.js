@@ -1,6 +1,5 @@
 import React from "react";
 import { uniqueId, isEmpty, find } from 'lodash';
-
 import { Container, Grid, Image, Button, Header } from 'semantic-ui-react';
 
 function GifList({ title, favorites, gifsToShow, onAddFavorite, onRemoveFavorite }) {
@@ -41,7 +40,17 @@ function GifList({ title, favorites, gifsToShow, onAddFavorite, onRemoveFavorite
                 })}
             </Grid>
         </Container>
-    ) : null;
+    ) : (
+            <Container>
+                {title !== 'Favorites' && (
+                    <Grid.Row>
+                        <Grid.Column>
+                            <Header as="h3" textAlign='center' style={{ paddingTop: '25%' }}>NO DATA</Header>
+                        </Grid.Column>
+                    </Grid.Row>
+                )}
+            </Container>
+    );
 };
 
 export default GifList;
