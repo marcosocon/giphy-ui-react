@@ -1,6 +1,7 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from './trending';
+import { GIFS, SEARCH } from './actionsTypes';
 import serviceFetch from '../services/fetch';
 
 const mockstore = configureStore([thunk]);
@@ -9,7 +10,7 @@ describe('trending actions', () => {
   it('should update search status', () => {
     const payload = [{ title: 'my gifs' }];
     const expectedAction = {
-      type: 'SET_TRENDING_GIFS',
+      type: GIFS.SET_TRENDING,
       payload
     };
 
@@ -30,9 +31,9 @@ describe('trending actions', () => {
     store.dispatch(actions.fetchTrendingGifs()).then(() => {
       asyncActions = store.getActions();
 
-      expect(asyncActions[0]).toEqual({ type: 'LOADING', payload: true });
-      expect(asyncActions[1]).toEqual({ type: 'LOADING', payload: false });
-      expect(asyncActions[2]).toEqual({ type: 'SET_TRENDING_GIFS', payload: 'OK' });
+      expect(asyncActions[0]).toEqual({ type: SEARCH.LOADING, payload: true });
+      expect(asyncActions[1]).toEqual({ type: SEARCH.LOADING, payload: false });
+      expect(asyncActions[2]).toEqual({ type: GIFS.SET_TRENDING, payload: 'OK' });
     });
   });
 });

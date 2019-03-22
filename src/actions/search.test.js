@@ -1,6 +1,7 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from './search';
+import { GIFS, SEARCH } from './actionsTypes';
 import serviceFetch from '../services/fetch';
 
 const mockstore = configureStore([thunk]);
@@ -9,7 +10,7 @@ describe('search actions', () => {
   it('should update search status', () => {
     const payload = 1;
     const expectedAction = {
-      type: 'SET_SEARCH_STATUS',
+      type: SEARCH.SET_STATUS,
       payload
     };
 
@@ -19,7 +20,7 @@ describe('search actions', () => {
   it('should update current search keyword', () => {
     const payload = 'My Keyword';
     const expectedAction = {
-      type: "SET_SEARCH_CURRENT",
+      type: SEARCH.SET_CURRENT,
       payload
     };
 
@@ -29,7 +30,7 @@ describe('search actions', () => {
   it('should set current search response', () => {
     const payload = [{ title: 'My Gifs' }];
     const expectedAction = {
-      type: "SET_FINDED_GIFS",
+      type: GIFS.SET_FINDED,
       payload
     };
 
@@ -39,7 +40,7 @@ describe('search actions', () => {
   it('should set current search response', () => {
     const payload = true;
     const expectedAction = {
-      type: "LOADING",
+      type: SEARCH.LOADING,
       payload
     };
 
@@ -61,13 +62,13 @@ describe('search actions', () => {
     store.dispatch(actions.fetchGifsByKeyword(keyword)).then(() => {
       actionsResponse = store.getActions();
       
-      expect(actionsResponse[0]).toEqual({ type: 'SET_SEARCH_CURRENT', payload: 'test' });
-      expect(actionsResponse[1]).toEqual({ type: 'SET_SEARCH_STATUS', payload: 1 });
-      expect(actionsResponse[2]).toEqual({ type: 'LOADING', payload: true });
+      expect(actionsResponse[0]).toEqual({ type: SEARCH.SET_CURRENT, payload: 'test' });
+      expect(actionsResponse[1]).toEqual({ type: SEARCH.SET_STATUS, payload: 1 });
+      expect(actionsResponse[2]).toEqual({ type: SEARCH.LOADING, payload: true });
       
-      expect(actionsResponse[3]).toEqual({ type: 'SET_FINDED_GIFS', payload: 'OK' });
-      expect(actionsResponse[4]).toEqual({ type: 'SET_SEARCH_STATUS', payload: 2 });
-      expect(actionsResponse[5]).toEqual({ type: 'LOADING', payload: false });
+      expect(actionsResponse[3]).toEqual({ type: GIFS.SET_FINDED, payload: 'OK' });
+      expect(actionsResponse[4]).toEqual({ type: SEARCH.SET_STATUS, payload: 2 });
+      expect(actionsResponse[5]).toEqual({ type: SEARCH.LOADING, payload: false });
     });
 
   });

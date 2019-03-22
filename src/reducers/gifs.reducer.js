@@ -1,3 +1,5 @@
+import { GIFS } from '../actions/actionsTypes';
+
 export const initialState = {
     trendingGifs: [],
     favoriteGifs: [],
@@ -6,13 +8,13 @@ export const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case 'SET_TRENDING_GIFS':
+        case GIFS.SET_TRENDING:
             return { ...state, trendingGifs: action.payload };
-        case 'SET_FINDED_GIFS':
+        case GIFS.SET_FINDED:
             return { ...state, searchResultGifs: action.payload };
-        case 'ADD_FAVORITE':
+        case GIFS.ADD_FAVOTITE:
             return { ...state, favoriteGifs: [...state.favoriteGifs, action.payload] };
-        case 'REMOVE_FAVORITE':
+        case GIFS.REMOVE_FAVORITE:
             return { ...state, favoriteGifs: state.favoriteGifs.filter(item => item !== action.payload) };
         default:
             return state

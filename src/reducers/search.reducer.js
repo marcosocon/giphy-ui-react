@@ -1,3 +1,5 @@
+import { SEARCH } from '../actions/actionsTypes';
+
 const STATUS = {
   INITIAL: 0,
   UPDATED: 1,
@@ -12,11 +14,11 @@ export const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_SEARCH_CURRENT':
+    case SEARCH.SET_CURRENT:
       return { ...state, currentSearch: action.payload };
-    case 'SET_SEARCH_STATUS':
+    case SEARCH.SET_STATUS:
       return { ...state, status: action.payload };
-    case 'LOADING':
+    case SEARCH.LOADING:
       return { ...state, loading: action.payload };
     default:
         return state

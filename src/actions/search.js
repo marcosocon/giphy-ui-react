@@ -1,4 +1,5 @@
 import serviceFetch from '../services/fetch';
+import { GIFS, SEARCH } from './actionsTypes';
 import {
   API_KEY,
   API_URL 
@@ -6,28 +7,28 @@ import {
 
 export function setStatus(payload) {
   return {
-    type: 'SET_SEARCH_STATUS',
+    type: SEARCH.SET_STATUS,
     payload,
   }
 }
 
 export function setCurrentSearch(payload) {
   return {
-    type: 'SET_SEARCH_CURRENT',
+    type: SEARCH.SET_CURRENT,
     payload,
   }
 }
 
 export function setFindedGifs(payload) {
   return {
-    type: 'SET_FINDED_GIFS',
+    type: GIFS.SET_FINDED,
     payload,
   }
 }
 
 export function loading(payload) {
   return {
-    type: 'LOADING',
+    type: SEARCH.LOADING,
     payload
   }
 }

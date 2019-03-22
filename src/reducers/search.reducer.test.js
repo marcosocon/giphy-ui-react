@@ -1,4 +1,5 @@
 import searchReducer, { initialState } from './search.reducer';
+import { SEARCH } from '../actions/actionsTypes';
 
 describe('search reducer', () => {
   it('instance and return initial state', () => {
@@ -7,7 +8,7 @@ describe('search reducer', () => {
 
   it('should update current search', () => {
     const action = {
-      type: 'SET_SEARCH_CURRENT',
+      type: SEARCH.SET_CURRENT,
       payload: 'test',
     };
 
@@ -21,7 +22,7 @@ describe('search reducer', () => {
   
   it('should set current search status', () => {
     const action = {
-      type: 'SET_SEARCH_STATUS',
+      type: SEARCH.SET_STATUS,
       payload: 2,
     };
 
@@ -35,7 +36,7 @@ describe('search reducer', () => {
   
   it('should set loading flag', () => {
     const action = {
-      type: 'LOADING',
+      type: SEARCH.LOADING,
       loading: true,
     };
 

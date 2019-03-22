@@ -1,5 +1,6 @@
 import serviceFetch from '../services/fetch';
 import { loading } from './search';
+import { GIFS } from './actionsTypes';
 import {
   API_KEY,
   API_URL 
@@ -7,7 +8,7 @@ import {
 
 export function setTrendingGifs(payload) {
   return {
-    type: 'SET_TRENDING_GIFS',
+    type: GIFS.SET_TRENDING,
     payload
   };
 };

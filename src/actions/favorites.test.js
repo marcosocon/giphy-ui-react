@@ -1,10 +1,11 @@
 import * as actions from './favorites';
+import { GIFS } from './actionsTypes';
 
 describe('favorite actions', () => {
   it('should create an action to add favorite', () => {
     const payload = 'My Payload';
     const expectedAction = {
-      type: "ADD_FAVORITE",
+      type: GIFS.ADD_FAVOTITE,
       payload
     };
 
@@ -14,7 +15,7 @@ describe('favorite actions', () => {
   it('should create an action to remove favorite', () => {
     const payload = 'My Payload';
     const expectedAction = {
-      type: "REMOVE_FAVORITE",
+      type: GIFS.REMOVE_FAVORITE,
       payload
     };
 

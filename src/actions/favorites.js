@@ -1,13 +1,14 @@
+import { GIFS } from "./actionsTypes";
 export function addFavorite(payload) {
   return {
-    type: "ADD_FAVORITE",
+    type: GIFS.ADD_FAVOTITE,
     payload
   };
 }
 
 export function removeFavorite(payload) {
   return {
-    type: "REMOVE_FAVORITE",
+    type: GIFS.REMOVE_FAVORITE,
     payload
   };
 }

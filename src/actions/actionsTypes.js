@@ -1,0 +1,12 @@
+export const GIFS = {
+  ADD_FAVOTITE: '[gifs] ADD GIF TO FAVORITES',
+  REMOVE_FAVORITE: '[gifs] REMOVE GIF FROM FAVORITES',
+  SET_FINDED: '[gifs] SET FINDED GIFS',
+  SET_TRENDING: '[gifs] SET TRENDING GIFS',
+}
+
+export const SEARCH = {
+  SET_STATUS: '[search] SET_STATUS',
+  SET_CURRENT: '[search] SET_CURRENT',
+  LOADING: '[search] LOADING STATUS',
+}

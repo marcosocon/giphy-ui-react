@@ -1,4 +1,5 @@
 import gifsReducer, { initialState } from './gifs.reducer';
+import { GIFS } from '../actions/actionsTypes';
 
 describe('gifs reducer', () => {
   it('instance and return initial state', () => {
@@ -7,7 +8,7 @@ describe('gifs reducer', () => {
 
   it('should set trending gifs', () => {
     const action = {
-      type: 'SET_TRENDING_GIFS',
+      type: GIFS.SET_TRENDING,
       payload: [{ title: 'gifs' }],
     };
 
@@ -21,7 +22,7 @@ describe('gifs reducer', () => {
   
   it('should set searched gifs', () => {
     const action = {
-      type: 'SET_FINDED_GIFS',
+      type: GIFS.SET_FINDED,
       payload: [{ title: 'gifs' }],
     };
 
@@ -35,7 +36,7 @@ describe('gifs reducer', () => {
   
   it('should add gif to favorite', () => {
     const action = {
-      type: 'ADD_FAVORITE',
+      type: GIFS.ADD_FAVOTITE,
       payload: [{ title: 'gifs' }],
     };
 
@@ -49,7 +50,7 @@ describe('gifs reducer', () => {
   
   it('should remove gif from favorite', () => {
     const action = {
-      type: 'REMOVE_FAVORITE',
+      type: GIFS.REMOVE_FAVORITE,
       payload: [{ title: 'gifs' }],
     };
 
