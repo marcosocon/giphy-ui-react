@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { HomeContainer } from './Home';
+import { shallow } from 'enzyme';
+import { HomeContainer, mapDispatchToProps } from './Home';
 import GifList from '../components/GifList';
 
 describe('<Home />', () => {
@@ -27,5 +27,22 @@ describe('<Home />', () => {
     }
     const wrapper = shallow(<HomeContainer {...props} />);
     expect(wrapper.find(GifList)).toHaveLength(2);
-  })
+  });
+
+  describe('mapDispatchToProps function', () => {
+    it('actions should be defined', () => {
+      const dispatch = () => { };
+      const expectedActions = [
+        'fetchTrendingGifs',
+        'fetchGifsByKeyword',
+        'removeFavorite',
+        'addFavorite',
+      ];
+
+      const props = mapDispatchToProps(dispatch);
+
+      expect(Object.keys(props)).toEqual(expectedActions);
+    });
+  });
+
 });
